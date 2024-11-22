@@ -1,0 +1,123 @@
+/* General Styles */
+.academic-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Banner Section */
+  .banner {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  /* Vision, Mission, Goal Section */
+  .vision-mission-goal {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .vision-mission-goal .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .vision-mission-goal div {
+    width: 30%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .vision-mission-goal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .vision-mission-goal p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Courses & Studies Section */
+  .courses-studies {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+  }
+  
+  .courses-studies h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .courses-studies p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .course {
+    background-color: #e3e3e3;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .course h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .course p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Student Culture Section */
+  .student-culture {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .student-culture h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .student-culture p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .student-culture .culture-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .student-culture img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  

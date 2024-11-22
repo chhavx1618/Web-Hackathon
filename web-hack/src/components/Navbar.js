@@ -126,7 +126,7 @@ const Navbar = () => {
           </DropdownContent>
         </DropdownMenu>
         <DropdownMenu>
-          <Link to="/academics">Academics</Link>
+          <Link to="/Academics">Academics</Link>
           <DropdownContent>
             <Link to="/departments">Departments</Link>
             <Link to="/curriculum">curriculum</Link>

@@ -1,4 +1,6 @@
 import React from 'react';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -8,7 +10,7 @@ import StudentPortal from './pages/StudentPortal';
 //import Undergraduate from './pages/Undergraduate';
 //import Graduate from './pages/Graduate';
 //import International from './pages/International';
-//import Academics from './pages/Academics';
+import Academics from './pages/Academics';
 //import Departments from './pages/Departments';
 import Courses from './pages/Courses';
 //import Majors from './pages/Majors';
@@ -43,6 +45,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/ContactForm" element={<ContactForm />} />
         <Route path="/AdmissionApp" element={<AdmissionApp />} />
+        <Route path="/Academics" element={<Academics />} />
         {/* <Route path="/majors" element={<Majors />} />
         <Route path="/news" element={<News />} />
         <Route path="/resources" element={<Resources />} />
