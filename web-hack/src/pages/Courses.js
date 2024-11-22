@@ -1,13 +1,13 @@
 import React from 'react';
 //import './main_style.css'; // Import your CSS file
-import logo from './assets/logo.png'; // Update the path to your assets
-import favicon from './assets/favicon.ico';
-import campus1 from './assets/cm1.jfif';
-import campus2 from './assets/cm2.jfif';
-import campus3 from './assets/cm3.jfif';
-import canteen from './assets/canteen.jfif';
-import auditorium from './assets/auditorium.jfif';
-import hostel from './assets/hostel.jfif';
+import logo from '../assets/logo.png'; // Update the path to your assets
+import favicon from '../image/favicon.ico';
+import campus1 from '../image/cm1.jfif';
+import campus2 from '../image/cm2.jfif';
+import campus3 from '../image/cm3.jfif';
+import canteen from '../image/canteen.jfif';
+import auditorium from '../image/auditorium.jfif';
+import hostel from '../image/hostel.jfif';
 
 const Courses = () => {
   const showMenu = () => {
