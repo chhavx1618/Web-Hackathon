@@ -1,61 +1,9 @@
 import React from 'react';
+import './project.css'
 
 const Project = () => {
   return (
     <>
-      <header className="theme-main-header">
-        <div className="container">
-          <a href="index.html" className="logo float-left tran4s">
-            <img
-              src="http://www.gbpec.edu.in/assets/images/logo_new.png"
-              alt="Logo"
-            />
-          </a>
-
-          <nav className="navbar float-right theme-main-menu">
-            <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar-collapse-1"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Toggle navigation</span>
-                Menu
-                <i className="fa fa-bars" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div className="collapse navbar-collapse" id="navbar-collapse-1">
-              <ul className="nav navbar-nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="notice.html">NOTICES</a></li>
-                <li><a href="agenda/index.html">EVENTS</a></li>
-                <li className="active"><a href="projects.html">PROJECTS</a></li>
-                <li className="dropdown-holder">
-                  <a href="#">STUDENTS CORNER</a>
-                  <ul className="sub-menu">
-                    <li><a href="campus.html" className="tran3s">Campus</a></li>
-                    <li><a href="gallery.html" className="tran3s">Activities</a></li>
-                    <li><a href="socities.html" className="tran3s">Socities</a></li>
-                  </ul>
-                </li>
-                <li><a href="placements.html">PLACEMENTS</a></li>
-                <li className="dropdown-holder">
-                  <a href="academics.html">ACADEMICS</a>
-                  <ul className="sub-menu">
-                    <li><a href="CSEteachers.html" className="tran3s">CSE Faculty</a></li>
-                    <li><a href="#" className="tran3s">ECE Faculty</a></li>
-                    <li><a href="#" className="tran3s">MAE Faculty</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact.html">CONTACT</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
 
       <section className="inner-page-banner">
         <div className="opacity">
@@ -97,7 +45,7 @@ const Project = () => {
               <div className="single-img">
                 <img
                   style={{ height: '260px', width: '360px' }}
-                  src="images/project/homepage.jpg"
+                  src="./homepage.png"
                   alt="Image"
                 />
                 <div className="opacity">
