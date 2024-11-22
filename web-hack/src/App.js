@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
+import StudentPortal from './pages/StudentPortal';
 //import Admission from './pages/Admission';
 //import Undergraduate from './pages/Undergraduate';
 //import Graduate from './pages/Graduate';
@@ -16,6 +17,7 @@ import Courses from './pages/Courses';
 //import Alumni from './pages/Alumni';
 import Projects from './pages/Projects';
 import Notices from './pages/Notices';
+import Placement from './pages/Placement';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Notices" element={<Notices />} />
+        <Route path="/StudentPortal" element={<StudentPortal />} />
+        <Route path="/Placement" element={<Placement />} />
 
         {/* <Route path="/admission" element={<Admission />} />
         <Route path="/undergraduate" element={<Undergraduate />} />
