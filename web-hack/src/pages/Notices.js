@@ -1,15 +1,33 @@
 import React, { useState } from "react";
+import { FaCalendarAlt, FaRegFileAlt, FaRegMoneyBillAlt, FaSchool } from "react-icons/fa";
 
 const Notices = () => {
   // State to manage the search input and filtered rows
   const [searchText, setSearchText] = useState("");
+  const [filterType, setFilterType] = useState("All");
+  const [selectedNotice, setSelectedNotice] = useState(null);
 
   // Handle input change for search
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
   };
 
-  // Function to filter the rows based on the search input
+  // Handle filter change
+  const handleFilterChange = (event) => {
+    setFilterType(event.target.value);
+  };
+
+  // Handle modal open
+  const handleModalOpen = (notice) => {
+    setSelectedNotice(notice);
+  };
+
+  // Handle modal close
+  const handleModalClose = () => {
+    setSelectedNotice(null);
+  };
+
+  // Function to filter the rows based on the search input and type filter
   const filterRows = () => {
     return [
       { date: "22/09/10", type: "academics", notice: "CSE time table" },
@@ -33,88 +51,17 @@ const Notices = () => {
         )
       },
       // Add more rows here as needed
-    ].filter(row =>
+    ]
+    .filter(row =>
       row.date.toLowerCase().includes(searchText.toLowerCase()) ||
       row.type.toLowerCase().includes(searchText.toLowerCase()) ||
       row.notice.toLowerCase().includes(searchText.toLowerCase())
-    );
+    )
+    .filter(row => filterType === "All" || row.type.toLowerCase() === filterType.toLowerCase());
   };
 
   return (
-    <div>
-      {/* Theme Header */}
-      <header className="theme-main-header">
-        <div className="container">
-          <a href="index.html" className="logo float-left tran4s">
-            <img
-              src="http://www.gbpec.edu.in/assets/images/logo_new.png"
-              alt="Logo"
-            />
-          </a>
-
-          <nav className="navbar float-right theme-main-menu">
-            <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar-collapse-1"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Toggle navigation</span>
-                Menu
-                <i className="fa fa-bars" aria-hidden="true"></i>
-              </button>
-            </div>
-
-            <div className="collapse navbar-collapse" id="navbar-collapse-1">
-              <ul className="nav navbar-nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li className="active"><a href="#">NOTICES</a></li>
-                <li><a href="agenda/index.html">EVENTS</a>
-                  <ul className="sub-menu">
-                    <li><a href="events.html" className="tran3s">old</a></li>
-                  </ul>
-                </li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li className="dropdown-holder">
-                  <a href="#">STUDENTS CORNER</a>
-                  <ul className="sub-menu">
-                    <li><a href="campus.html" className="tran3s">Campus</a></li>
-                    <li><a href="gallery.html" className="tran3s">Activities</a></li>
-                    <li><a href="socities.html" className="tran3s">Socities</a></li>
-                  </ul>
-                </li>
-                <li><a href="placements.html">PLACEMENTS</a></li>
-                <li className="dropdown-holder">
-                  <a href="academics.html">ACADEMICS</a>
-                  <ul className="sub-menu">
-                    <li><a href="CSEteachers.html" className="tran3s">CSE Faculty</a></li>
-                    <li><a href="#" className="tran3s">ECE Faculty</a></li>
-                    <li><a href="#" className="tran3s">MAE Faculty</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact.html">CONTACT</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      {/* Inner page banner */}
-      <section className="inner-page-banner">
-        <div className="opacity">
-          <div className="container">
-            <h2>G B PANT ENGINEERING COLLEGE</h2>
-            <ul>
-              <li><a href="index.html">ABOUT US</a></li>
-              <li>:affiliated by IPU</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
+    <div className="notices-container">
       <div className="theme-title">
         <h2>Notices</h2>
         <p>
@@ -124,86 +71,228 @@ const Notices = () => {
         <hr />
 
         {/* Table Search Input */}
-        <h2>
+        <div className="search-container">
           <input
             id="TableInput"
             type="text"
-            placeholder="Search in table.."
+            placeholder="Search notices..."
             value={searchText}
             onChange={handleSearchChange}
+            className="search-input"
           />
-        </h2>
+        </div>
+
+        {/* Filter by Type */}
+        <div className="filter-container">
+          <select value={filterType} onChange={handleFilterChange} className="filter-select">
+            <option value="All">All Types</option>
+            <option value="academics">Academics</option>
+            <option value="financial">Financial</option>
+            <option value="schlorship">Scholarship</option>
+          </select>
+        </div>
 
         {/* Table with Notices */}
-        <table className="responsivetable">
-          <thead>
-            <tr>
-              <th>DATE</th>
-              <th>TYPE</th>
-              <th>NOTICES</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filterRows().map((row, index) => (
-              <tr key={index}>
-                <td><strong>{row.date}</strong></td>
-                <td className={row.type.toLowerCase()}>{row.type}</td>
-                <td>{row.notice}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="notices-table">
+          {filterRows().map((row, index) => (
+            <div
+              key={index}
+              className="notice-card"
+              onClick={() => handleModalOpen(row.notice)}
+            >
+              <div className="notice-header">
+                <span className="notice-date">
+                  <FaCalendarAlt /> {row.date}
+                </span>
+                <span className={`notice-type ${row.type.toLowerCase()}`}>
+                  {row.type === "academics" && <FaSchool />}
+                  {row.type === "Financial" && <FaRegMoneyBillAlt />}
+                  {row.type === "Schlorship" && <FaRegFileAlt />}
+                  {row.type}
+                </span>
+              </div>
+              <div className="notice-content">
+                {row.notice}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Modal for Notice Detail */}
+      {selectedNotice && (
+        <div className="modal-overlay" onClick={handleModalClose}>
+          <div className="modal-content">
+            <button className="close-btn" onClick={handleModalClose}>X</button>
+            <h3>Notice Details</h3>
+            <p>{selectedNotice}</p>
+          </div>
+        </div>
+      )}
 
       {/* Add CSS for table and responsiveness */}
       <style>
         {`
-          .responsivetable {
-            width: 100%;
-            border-collapse: collapse;
-          }
-
-          .responsivetable th,
-          .responsivetable td {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-          }
-
-          @media (max-width: 600px) {
-            .responsivetable {
-              overflow-x: scroll;
-              position: relative;
-              margin-left: -53%;
-              transform: scale(0.50);
-            }
-          }
-
-          @media (min-width: 600px) and (max-width: 850px) {
-            .responsivetable {
-              overflow-x: scroll;
-              position: relative;
-              margin-left: 40%;
-              transform: scale(0.80);
-            }
-          }
-
-          #TableInput {
-            padding: 10px;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 400px;
-            font-size: 16px;
+          .notices-container {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
           }
 
           .theme-title h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #3d3d3d;
           }
 
           .theme-title p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #555;
+            margin-bottom: 20px;
+          }
+
+          .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+
+          .search-input {
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 500px;
+            font-size: 1rem;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            transition: border 0.3s ease;
+          }
+
+          .search-input:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+          }
+
+          .filter-container {
+            text-align: center;
+            margin-bottom: 20px;
+          }
+
+          .filter-select {
+            padding: 10px;
+            width: 150px;
+            font-size: 1rem;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+          }
+
+          .notices-table {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+
+          .notice-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .notice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+          }
+
+          .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+          }
+
+          .notice-date {
+            font-weight: bold;
+            color: #555;
+          }
+
+          .notice-type {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            color: #333;
+          }
+
+          .notice-type.academics {
+            color: #ff7f50;
+          }
+
+          .notice-type.financial {
+            color: #28a745;
+          }
+
+          .notice-type.schlorship {
+            color: #ffc107;
+          }
+
+          .notice-content {
+            font-size: 1rem;
+            color: #666;
+          }
+
+          .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            text-align: center;
+            animation: fadeIn 0.3s ease-in;
+          }
+
+          .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+
+          @keyframes fadeIn {
+            0% {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .search-input, .filter-select {
+              width: 90%;
+            }
           }
         `}
       </style>
