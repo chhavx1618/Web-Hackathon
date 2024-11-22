@@ -1,0 +1,88 @@
+/* Main container styling */
+.admission-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #e3f2fd; /* Light blue background */
+  }
+  
+  .admission-form-content {
+    background-color: #fff; /* White background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admission-form-content h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Textarea specific styling */
+  .form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Buttons styling */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .send-btn {
+    background-color: #1e88e5; /* Blue button */
+    color: white;
+  }
+  
+  .send-btn:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+  }
+  
+  .clear-btn {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .clear-btn:hover {
+    background-color: #bdbdbd;
+  }
+  

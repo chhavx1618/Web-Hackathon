@@ -135,6 +135,7 @@ const Navbar = () => {
           </DropdownContent>
         </DropdownMenu>
         <Link to="/projects">Projects</Link>
+        <Link to="/AdmissionApp">Application Form</Link>
 
         
         <Link to="/ContactForm">Contact</Link>
