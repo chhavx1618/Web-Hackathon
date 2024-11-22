@@ -15,6 +15,7 @@ import Courses from './pages/Courses';
 //import Resources from './pages/Resources';
 //import Alumni from './pages/Alumni';
 import Projects from './pages/Projects';
+import Notices from './pages/Notices';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/Projects" element={<Projects />} />
+        <Route path="/Notices" element={<Notices />} />
 
         {/* <Route path="/admission" element={<Admission />} />
         <Route path="/undergraduate" element={<Undergraduate />} />
