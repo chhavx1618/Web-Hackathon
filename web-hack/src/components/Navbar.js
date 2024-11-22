@@ -114,6 +114,8 @@ const Navbar = () => {
       <NavLinks open={open}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/notices">NOTICES</Link>
+
         <DropdownMenu>
           <Link to="/admission">Admission</Link>
           <DropdownContent>
