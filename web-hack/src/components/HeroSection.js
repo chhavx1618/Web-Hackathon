@@ -109,22 +109,18 @@ const Box = styled.div`
 
   &:nth-child(1) {
     background-color: #00509e;
-    background-image: url("https://via.placeholder.com/400x300?text=Future+Students");
   }
 
   &:nth-child(2) {
     background-color: #0077b6;
-    background-image: url("https://via.placeholder.com/400x300?text=Academic+Programs");
   }
 
   &:nth-child(3) {
     background-color: #0096c7;
-    background-image: url("https://via.placeholder.com/400x300?text=Calendars+%26+Dates");
   }
 
   &:nth-child(4) {
     background-color: #00b4d8;
-    background-image: url("https://via.placeholder.com/400x300?text=Virtual+Tours");
   }
 `;
 

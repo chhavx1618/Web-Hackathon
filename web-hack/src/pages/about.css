@@ -1,0 +1,141 @@
+/* about.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+  }
+  
+  .about-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Hero Section */
+  .about-hero {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .about-hero p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  /* Mission, Vision, and Values */
+  .about-mission,
+  .about-vision,
+  .about-values,
+  .about-history {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-mission h2,
+  .about-vision h2,
+  .about-values h2,
+  .about-history h2 {
+    color: #4e54c8;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #4e54c8;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .about-mission p,
+  .about-vision p,
+  .about-history p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 10px;
+  }
+  
+  .about-values ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-values li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .about-values li::before {
+    content: "✔";
+    color: #4e54c8;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Footer Section */
+  .about-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #4e54c8;
+    color: #fff;
+    border-radius: 10px;
+  }
+  
+  .about-footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .about-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-hero h1 {
+      font-size: 2rem;
+    }
+  
+    .about-hero p {
+      font-size: 1rem;
+    }
+  
+    .about-mission h2,
+    .about-vision h2,
+    .about-values h2,
+    .about-history h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -1,5 +1,5 @@
 import React from 'react';
-//import './main_style.css'; // Import your CSS file
+import '../styles/main.css'; // Import your CSS file
 import logo from '../assets/logo.png'; // Update the path to your assets
 import favicon from '../image/favicon.ico';
 import campus1 from '../image/cm1.jfif';
@@ -40,36 +40,7 @@ const Courses = () => {
 
       {/* Header Section */}
       <section className="header">
-        <nav>
-          <a href="index.html">
-            <img src={logo} id="logo-img" alt="Logo" />
-          </a>
-          <div className="nav-links" id="navLinks">
-            <span className="icon" onClick={hideMenu}>
-              &#10005;
-            </span>
-            <ul>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="Admission_page.html">Admission</a>
-              </li>
-              <li>
-                <a href="#course_call">Course</a>
-              </li>
-              <li>
-                <a href="fees_page.html">Fees</a>
-              </li>
-              <li>
-                <a href="Contact_page.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <span className="icon" onClick={showMenu}>
-            &#9776;
-          </span>
-        </nav>
+          
         <div className="text-box">
           <h1>Gokul BCA College</h1>
           <p>
