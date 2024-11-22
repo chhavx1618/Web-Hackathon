@@ -5,46 +5,46 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f7fa;
-  }
-  
-  .dashboard-container {
+}
+
+.dashboard-container {
     display: flex;
     justify-content: space-between;
     margin: 30px;
-  }
-  
-  .left-section {
+}
+
+.left-section {
     width: 30%;
-  }
-  
-  .right-section {
+}
+
+.right-section {
     width: 65%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-  
-  .profile-card {
+}
+
+.profile-card {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .profile-card .profile-pic {
+}
+
+.profile-card .profile-pic {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
-  }
-  
-  .profile-card h2 {
+}
+
+.profile-card h2 {
     font-size: 24px;
     margin: 10px 0;
-  }
-  
-  .profile-card button {
+}
+
+.profile-card button {
     background-color: #6c63ff;
     color: white;
     border: none;
@@ -52,75 +52,126 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .profile-card button:hover {
+}
+
+.profile-card button:hover {
     background-color: #5750d1;
-  }
-  
-  .skills-card {
+}
+
+.skills-card {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-  }
-  
-  .skills-card h3 {
+}
+
+.skills-card h3 {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  .skills-card ul {
+}
+
+.skills-card ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .skills-card li {
+}
+
+.skills-card li {
     font-size: 16px;
     margin: 5px 0;
-  }
-  
-  .stats-card {
+}
+
+.stats-card {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .stats-card h3 {
+}
+
+.stats-card h3 {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  .stat {
+}
+
+.stat {
     font-size: 28px;
     font-weight: bold;
     color: #6c63ff;
-  }
-  
-  .education-card,
-  .job-history-card,
-  .coding-stats-card {
+}
+
+.education-card,
+.courses-card,
+.projects-card,
+.job-history-card,
+.coding-stats-card {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .education-card h3,
-  .job-history-card h3,
-  .coding-stats-card h3 {
+}
+
+.education-card h3,
+.courses-card h3,
+.projects-card h3,
+.job-history-card h3,
+.coding-stats-card h3 {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  .job-history-card .job {
-    margin-bottom: 10px;
-  }
-  
-  .job-history-card p {
+}
+
+.courses-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.courses-card li {
+    font-size: 16px;
     margin: 5px 0;
-  }
-  
+}
+
+.projects-card .project {
+    margin-bottom: 20px;
+}
+
+.projects-card h4 {
+    font-size: 18px;
+    color: #6c63ff;
+    margin-bottom: 10px;
+}
+
+.projects-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.projects-card .tech-stack {
+    font-weight: bold;
+}
+
+.job-history-card .job {
+    margin-bottom: 10px;
+}
+
+.job-history-card p {
+    margin: 5px 0;
+}
+
+.coding-stats-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #5750d1;
+}
