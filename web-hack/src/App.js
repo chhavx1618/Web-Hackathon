@@ -19,6 +19,7 @@ import Projects from './pages/Projects';
 import Notices from './pages/Notices';
 import Placement from './pages/Placement';
 import Curriculum from './pages/Curriculum';
+import ContactForm from './pages/ContactForm';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/academics" element={<Academics />} />
         <Route path="/departments" element={<Departments />} /> */}
         <Route path="/courses" element={<Courses />} />
+        <Route path="/ContactForm" element={<ContactForm />} />
         {/* <Route path="/majors" element={<Majors />} />
         <Route path="/news" element={<News />} />
         <Route path="/resources" element={<Resources />} />

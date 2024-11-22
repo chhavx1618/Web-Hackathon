@@ -135,8 +135,9 @@ const Navbar = () => {
           </DropdownContent>
         </DropdownMenu>
         <Link to="/projects">Projects</Link>
-        <Link to="/news">News</Link>
-        <Link to="/resources">Resources</Link>
+
+        
+        <Link to="/ContactForm">Contact</Link>
         <Link to="/alumni">Alumni</Link>
       </NavLinks>
     </NavbarWrapper>
