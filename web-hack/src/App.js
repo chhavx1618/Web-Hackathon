@@ -1,6 +1,6 @@
 import React from 'react';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -23,6 +23,8 @@ import Placement from './pages/Placement';
 import Curriculum from './pages/Curriculum';
 import ContactForm from './pages/ContactForm';
 import AdmissionApp from './pages/AdmissionApp';
+import Gallery from './pages/Gallery';
+
 function App() {
   return (
     <Router>
@@ -34,7 +36,8 @@ function App() {
         <Route path="/Notices" element={<Notices />} />
         <Route path="/StudentPortal" element={<StudentPortal />} />
         <Route path="/Placement" element={<Placement />} />
-        <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/Curriculum" element={<Curriculum />} />
+        <Route path="/Gallery" element={<Gallery />} />
 
         {/* <Route path="/admission" element={<Admission />} />
         <Route path="/undergraduate" element={<Undergraduate />} />

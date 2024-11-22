@@ -114,9 +114,8 @@ const Navbar = () => {
       <NavLinks open={open}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/notices">NOTICES</Link>
-        <Link to="/StudentPortal">Student Portal</Link>
-        <Link to="/Placement">Placement</Link>
+        <Link to="/notices">Notices</Link>
+        {/* <Link to="/Placement">Placement</Link>
         <DropdownMenu>
           <Link to="/admission">Admission</Link>
           <DropdownContent>
@@ -124,22 +123,19 @@ const Navbar = () => {
             <Link to="/graduate">Graduate</Link>
             <Link to="/international">International</Link>
           </DropdownContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
         <DropdownMenu>
           <Link to="/Academics">Academics</Link>
           <DropdownContent>
-            <Link to="/departments">Departments</Link>
-            <Link to="/curriculum">curriculum</Link>
+            <Link to="/curriculum">Curriculum</Link>
             <Link to="/courses">Courses</Link>
-            <Link to="/majors">Majors</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/AdmissionApp">Application Form</Link>
           </DropdownContent>
         </DropdownMenu>
-        <Link to="/projects">Projects</Link>
-        <Link to="/AdmissionApp">Application Form</Link>
-
-        
         <Link to="/ContactForm">Contact</Link>
-        <Link to="/alumni">Alumni</Link>
+        <Link to="/StudentPortal">Student Portal</Link>
+        <Link to="/Gallery">Gallery</Link>
       </NavLinks>
     </NavbarWrapper>
   );
