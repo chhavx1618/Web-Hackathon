@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'; // Import Link
 import logo from '../assets/logo.png';
-import backgroundImage from '../assets/image.png';  // Your logo
 
 // Styled Components
-
 const NavbarWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -97,7 +96,6 @@ const HamburgerIcon = styled.div`
 `;
 
 // Navbar Component
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -114,27 +112,27 @@ const Navbar = () => {
         <span />
       </HamburgerIcon>
       <NavLinks open={open}>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <DropdownMenu>
-          <a href="/admission">Admission</a>
+          <Link to="/admission">Admission</Link>
           <DropdownContent>
-            <a href="/undergraduate">Undergraduate</a>
-            <a href="/graduate">Graduate</a>
-            <a href="/international">International</a>
+            <Link to="/undergraduate">Undergraduate</Link>
+            <Link to="/graduate">Graduate</Link>
+            <Link to="/international">International</Link>
           </DropdownContent>
         </DropdownMenu>
         <DropdownMenu>
-          <a href="/academics">Academics</a>
+          <Link to="/academics">Academics</Link>
           <DropdownContent>
-            <a href="/departments">Departments</a>
-            <a href="/courses">Courses</a>
-            <a href="/majors">Majors</a>
+            <Link to="/departments">Departments</Link>
+            <Link to="/courses">Courses</Link>
+            <Link to="/majors">Majors</Link>
           </DropdownContent>
         </DropdownMenu>
-        <a href="/news">News</a>
-        <a href="/resources">Resources</a>
-        <a href="/alumni">Alumni</a>
+        <Link to="/news">News</Link>
+        <Link to="/resources">Resources</Link>
+        <Link to="/alumni">Alumni</Link>
       </NavLinks>
     </NavbarWrapper>
   );
