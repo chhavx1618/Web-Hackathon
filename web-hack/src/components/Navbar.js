@@ -129,6 +129,7 @@ const Navbar = () => {
           <Link to="/academics">Academics</Link>
           <DropdownContent>
             <Link to="/departments">Departments</Link>
+            <Link to="/curriculum">curriculum</Link>
             <Link to="/courses">Courses</Link>
             <Link to="/majors">Majors</Link>
           </DropdownContent>
