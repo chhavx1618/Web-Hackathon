@@ -16,7 +16,7 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("[DEBUG] User logged in successfully:", userCredential.user);
-      navigate('/student-portal');
+      navigate('/StudentPortal');
     } catch (err) {
       console.error("[DEBUG] Error during login:", err.message);
       setError(err.message);

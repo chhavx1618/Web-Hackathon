@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { auth, db, setDoc, doc, getDoc } from './Firebase'; // Import necessary Firestore functions
 import './std.css';
 
-// Updated student data
 const studentData = {
   name: "John Doe",
   profilePicture: "https://randomuser.me/api/portraits/women/2.jpg",
@@ -32,18 +32,29 @@ const studentData = {
 };
 
 function StudentPortal() {
-  // States for editing profile
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState(studentData);
-  
-  // State to handle form inputs
   const [editData, setEditData] = useState({
     name: profile.name,
     education: profile.education,
     skills: profile.skills.join(', '),
   });
 
-  // Handle input change for the edit form
+  const user = auth.currentUser; // Get the current authenticated user
+
+  useEffect(() => {
+    if (user) {
+      // Fetch user data from Firestore when the component mounts
+      const fetchUserData = async () => {
+        const userDoc = await getDoc(doc(db, "users", user.uid)); // Get the user data from Firestore
+        if (userDoc.exists()) {
+          setProfile(userDoc.data());
+        }
+      };
+      fetchUserData();
+    }
+  }, [user]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setEditData({
@@ -52,12 +63,18 @@ function StudentPortal() {
     });
   };
 
-  // Save changes to profile
-  const handleEditProfile = (e) => {
+  const handleEditProfile = async (e) => {
     e.preventDefault();
     const updatedSkills = editData.skills.split(',').map(skill => skill.trim());
 
     setProfile({
+      ...profile,
+      name: editData.name,
+      education: editData.education,
+      skills: updatedSkills,
+    });
+
+    await setDoc(doc(db, "users", user.uid), { // Save updated data to Firestore
       ...profile,
       name: editData.name,
       education: editData.education,
@@ -69,6 +86,7 @@ function StudentPortal() {
 
   return (
     <div className="dashboard-container">
+      {/* Profile Section */}
       <div className="left-section">
         <div className="profile-card">
           <img src={profile.profilePicture} alt="Profile" className="profile-pic" />
@@ -85,12 +103,12 @@ function StudentPortal() {
         </div>
       </div>
 
+      {/* Right Section */}
       <div className="right-section">
         <div className="education-card">
           <h3>Education</h3>
           <p>{profile.education}</p>
         </div>
-
         <div className="courses-card">
           <h3>Courses</h3>
           <ul>
@@ -101,7 +119,6 @@ function StudentPortal() {
             ))}
           </ul>
         </div>
-
         <div className="projects-card">
           <h3>Projects</h3>
           {profile.projects.map((project, index) => (
@@ -112,7 +129,6 @@ function StudentPortal() {
             </div>
           ))}
         </div>
-
         <div className="coding-stats-card">
           <h3>Coding Stats</h3>
           <p>Total Lines of Code: {profile.codingStats.totalLinesOfCode}</p>
@@ -145,22 +161,17 @@ function StudentPortal() {
                 />
               </div>
               <div className="form-group">
-                <label>Skills:</label>
+                <label>Skills (comma-separated):</label>
                 <input
                   type="text"
                   name="skills"
                   value={editData.skills}
                   onChange={handleInputChange}
                 />
-                <small>(Comma-separated values)</small>
               </div>
-              <div className="form-actions">
-                <button type="submit">Save Changes</button>
-                <button type="button" onClick={() => setIsEditing(false)}>
-                  Cancel
-                </button>
-              </div>
+              <button type="submit">Save Changes</button>
             </form>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
           </div>
         </div>
       )}
