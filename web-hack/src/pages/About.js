@@ -50,12 +50,6 @@ const AboutPage = () => {
           changing needs of students and society while staying true to our core mission.
         </p>
       </section>
-
-      <footer className="about-footer">
-        <p>
-          For more information, visit our <a href="/contact">Contact Page</a>.
-        </p>
-      </footer>
     </div>
   );
 };

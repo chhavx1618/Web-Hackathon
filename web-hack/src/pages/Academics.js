@@ -3,6 +3,9 @@ import Slider from "react-slick";  // Install react-slick for the sliding banner
 import "./Academics.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import banner1 from "../assets/image.png";
+import banner2 from "../assets/image2.png";
+import banner3 from "../assets/image3.png";
 
 const Academic = () => {
 
@@ -48,9 +51,9 @@ const Academic = () => {
       {/* Sliding Banner */}
       <section id="banner" className="banner">
         <Slider {...settings}>
-          <div><img src="https://via.placeholder.com/1200x400/FF5733/333333?text=Banner+1" alt="Banner 1" /></div>
-          <div><img src="https://via.placeholder.com/1200x400/33B5FF/333333?text=Banner+2" alt="Banner 2" /></div>
-          <div><img src="https://via.placeholder.com/1200x400/FFB533/333333?text=Banner+3" alt="Banner 3" /></div>
+        <div><img src={banner1} alt="Banner 1" /></div>
+        <div><img src={banner2} alt="Banner 2" /></div>
+        <div><img src={banner3} alt="Banner 3" /></div>
         </Slider>
       </section>
 

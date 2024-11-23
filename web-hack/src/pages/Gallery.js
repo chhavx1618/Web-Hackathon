@@ -5,14 +5,17 @@ const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
-  const images = [
-    "https://via.placeholder.com/400x300/FF5733/FFFFFF?text=Image+1",
-    "https://via.placeholder.com/400x300/33B5FF/FFFFFF?text=Image+2",
-    "https://via.placeholder.com/400x300/FFB533/FFFFFF?text=Image+3",
-    "https://via.placeholder.com/400x300/33B533/FFFFFF?text=Image+4",
-    "https://via.placeholder.com/400x300/FFFF33/FFFFFF?text=Image+5",
-    "https://via.placeholder.com/400x300/33FF57/FFFFFF?text=Image+6",
-  ];
+  // Function to generate random placeholder URLs
+  const generateRandomImages = (count) => {
+    return Array.from({ length: count }, () => {
+      const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
+      const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
+      const text = `Image+${Math.floor(Math.random() * 100)}`;
+      return `https://via.placeholder.com/400x300/${randomColor1}/${randomColor2}?text=${text}`;
+    });
+  };
+
+  const images = generateRandomImages(12); // Generate 12 random images
 
   const openModal = (image) => {
     setCurrentImage(image);
@@ -44,7 +47,9 @@ const Gallery = () => {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <img src={currentImage} alt="Full screen" className="modal-image" />
-            <button className="modal-close" onClick={closeModal}>Close</button>
+            <button className="modal-close" onClick={closeModal}>
+              Close
+            </button>
           </div>
         </div>
       )}

@@ -30,11 +30,11 @@ const Courses = () => {
         />
         <meta
           name="description"
-          content="The Gokul Global University at Sidhpur provides one of the earliest forms of technical studies, which has been vital in setting up the standard of brilliance."
+          content="The IIIT at Vadodara provides one of the earliest forms of technical studies, which has been vital in setting up the standard of brilliance."
         />
         <meta name="keywords" content="Gokul Global University, College" />
         <meta name="author" content="Jaydipsinh Solanki" />
-        <title>Gokul Global University</title>
+        <title>IIIT Vadodara</title>
         <link rel="shortcut icon" href={favicon} type="image/svg+xml" />
       </head>
 
@@ -42,14 +42,14 @@ const Courses = () => {
       <section className="header">
           
         <div className="text-box">
-          <h1>Gokul BCA College</h1>
+          <h1>IIITV</h1>
           <p>
-            The Gokul Global University at Sidhpur provides one of the earliest
+            The Indian Institute of Information Technology, Vadodara provides one of the earliest
             forms of technical studies,
             <br />
             which has been vital in setting up the standard of brilliance.
           </p>
-          <a href="Admission_page.html" className="hero-btn">
+          <a href="AdmissionApp" className="hero-btn">
             Admission Open
           </a>
         </div>
@@ -60,7 +60,7 @@ const Courses = () => {
         <h1>Courses We Offer</h1>
         <p>
           We offer three of the best computer science courses for students at
-          Gokul Global University.
+          IIIT Vadodara.
         </p>
         <div className="row">
           <div className="course-col">
@@ -149,17 +149,6 @@ const Courses = () => {
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <section className="footer">
-        <h4>About Us</h4>
-        <p>
-          The Gokul Global University at Sidhpur provides one of the earliest
-          forms of technical studies, which has been vital in setting up the
-          standard of brilliance.
-        </p>
-        <p id="copyright">Made By &#10084; Jaydipsinh Solanki</p>
       </section>
     </div>
   );

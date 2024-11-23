@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from '../assets/image.png'
+import backgroundImage from '../assets/home.png'
 
 const Navbar = styled.nav`
   display: flex;
@@ -26,7 +26,7 @@ const HeroWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: blue;
+  color: white;
   position: relative;
   background-attachment: scroll;
   background-position: center;
@@ -35,15 +35,18 @@ const HeroWrapper = styled.section`
 
 const HeroText = styled.div`
   text-align: center;
+ 
 
   p {
     font-size: 2rem;
     margin: 0.5rem 0;
+     color: white;
   }
 
   p:first-child {
     font-size: 1.5rem;
     font-weight: bold;
+     color: white;
   }
 `;
 
@@ -85,6 +88,7 @@ const Box = styled.div`
     font-size: 1rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
+    color: white;
   }
 
   .icon {

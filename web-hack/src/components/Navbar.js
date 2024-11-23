@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 
 // Styled Components
 const NavbarWrapper = styled.nav`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,7 +116,7 @@ const Navbar = () => {
 
   return (
     <NavbarWrapper>
-      <Logo src={logo} alt="IIITV" />
+      <Logo src={logo} alt="IIITV" />Indian Institute of Information Technology (IIIT Vadodara)
       <HamburgerIcon onClick={toggleMenu}>
         <span />
         <span />
@@ -146,7 +147,6 @@ const Navbar = () => {
           </DropdownContent>
         </DropdownMenu>
         <Link to="/ContactForm">Contact</Link>
-        <Link to="/StudentPortal">Student Portal</Link>
         <Link to="/Gallery">Gallery</Link>
       </NavLinks>
     </NavbarWrapper>

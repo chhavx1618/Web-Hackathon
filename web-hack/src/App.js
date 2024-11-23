@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import StudentPortal from './pages/StudentPortal';
@@ -58,7 +59,9 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/alumni" element={<Alumni />} /> */}
       </Routes>
+      <Footer />
     </Router>
+
   );
 }
 
