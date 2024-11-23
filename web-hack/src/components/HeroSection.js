@@ -28,8 +28,9 @@ const HeroWrapper = styled.section`
   align-items: center;
   color: blue;
   position: relative;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
+
 `;
 
 const HeroText = styled.div`

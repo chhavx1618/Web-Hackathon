@@ -51,11 +51,21 @@ const NavLinks = styled.div`
 `;
 
 const DropdownMenu = styled.div`
+display: flex;
+  gap: 20px;
   position: relative;
-  
+
+  a {
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
   &:hover > div {
     display: block;
   }
+  
 `;
 
 const DropdownContent = styled.div`
@@ -128,6 +138,7 @@ const Navbar = () => {
         <DropdownMenu>
           <Link to="/Academics">Academics</Link>
           <DropdownContent>
+            <Link to="/Academics">Academics</Link>
             <Link to="/curriculum">Curriculum</Link>
             <Link to="/courses">Courses</Link>
             <Link to="/projects">Projects</Link>
