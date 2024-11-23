@@ -16,7 +16,7 @@ const SignUp = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       console.log("[DEBUG] User signed up successfully:", userCredential.user);
-      navigate('/student-portal');
+      navigate('/StudentPortal');
     } catch (err) {
       console.error("[DEBUG] Error during sign-up:", err.message);
       setError(err.message);
