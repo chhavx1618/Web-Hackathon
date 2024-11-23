@@ -32,32 +32,38 @@ const Notices = () => {
     return [
       { date: "22/09/10", type: "academics", notice: "CSE time table" },
       { date: "22/09/2018", type: "Financial", notice: "SBI fee link" },
-      { 
-        date: "23/08/2018", 
-        type: "Schlorship", 
+      {
+        date: "23/08/2018",
+        type: "Schlorship",
         notice: (
           <a href="http://www.gbpec.edu.in/docs/NoticeAndUpdates/disable.pdf">
             Post-matric Scholarship for Students with Disabilities
           </a>
-        ) 
+        ),
       },
-      { 
-        date: "24/08/2018", 
-        type: "Schlorship", 
+      {
+        date: "24/08/2018",
+        type: "Schlorship",
         notice: (
           <a href="http://www.gbpec.edu.in/docs/NoticeAndUpdates/MoMA_MCM_2018-20.pdf">
             Notice-MERIT CUM MEANS BASED SCHOLARSHIP
           </a>
-        )
+        ),
       },
       // Add more rows here as needed
     ]
-    .filter(row =>
-      row.date.toLowerCase().includes(searchText.toLowerCase()) ||
-      row.type.toLowerCase().includes(searchText.toLowerCase()) ||
-      row.notice.toLowerCase().includes(searchText.toLowerCase())
-    )
-    .filter(row => filterType === "All" || row.type.toLowerCase() === filterType.toLowerCase());
+      .filter((row) => {
+        // Convert `notice` to string for comparison if it's not a string
+        const noticeText =
+          typeof row.notice === "string" ? row.notice : row.notice?.props?.children || "";
+
+        return (
+          row.date.toLowerCase().includes(searchText.toLowerCase()) ||
+          row.type.toLowerCase().includes(searchText.toLowerCase()) ||
+          noticeText.toLowerCase().includes(searchText.toLowerCase())
+        );
+      })
+      .filter((row) => filterType === "All" || row.type.toLowerCase() === filterType.toLowerCase());
   };
 
   return (
@@ -125,7 +131,7 @@ const Notices = () => {
           <div className="modal-content">
             <button className="close-btn" onClick={handleModalClose}>X</button>
             <h3>Notice Details</h3>
-            <p>{selectedNotice}</p>
+            <div>{selectedNotice}</div>
           </div>
         </div>
       )}
@@ -286,12 +292,6 @@ const Notices = () => {
             100% {
               opacity: 1;
               transform: scale(1);
-            }
-          }
-
-          @media (max-width: 768px) {
-            .search-input, .filter-select {
-              width: 90%;
             }
           }
         `}
