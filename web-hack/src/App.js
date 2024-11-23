@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import StudentPortal from './pages/StudentPortal';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 //import Admission from './pages/Admission';
 //import Undergraduate from './pages/Undergraduate';
 //import Graduate from './pages/Graduate';
@@ -38,6 +40,8 @@ function App() {
         <Route path="/Placement" element={<Placement />} />
         <Route path="/Curriculum" element={<Curriculum />} />
         <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/Login" element={<Login />} />
+        
 
         {/* <Route path="/admission" element={<Admission />} />
         <Route path="/undergraduate" element={<Undergraduate />} />

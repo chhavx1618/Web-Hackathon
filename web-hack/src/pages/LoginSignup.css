@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    width: 300px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .glass-card h2 {
+    margin-bottom: 20px;
+  }
+  
+  .glass-card input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .glass-card .btn-primary,
+  .glass-card .btn-google {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .btn-google {
+    background-color: #4285f4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-google i {
+    margin-right: 8px;
+  }
+  
+  .link {
+    color: #00bcd4;
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  

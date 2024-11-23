@@ -115,6 +115,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/notices">Notices</Link>
+        <Link to="/Login ">Login</Link>
         {/* <Link to="/Placement">Placement</Link>
         <DropdownMenu>
           <Link to="/admission">Admission</Link>
