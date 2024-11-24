@@ -8,7 +8,7 @@ const AboutPage = () => {
       <section className="about-hero">
         <h1>About Us</h1>
         <p>
-          Welcome to Gokul Global University, where education meets excellence. 
+          Welcome to IIIT Vadodara, where education meets excellence. 
           Our university is committed to providing the best learning environment for students 
           and preparing them for a successful future.
         </p>
@@ -45,7 +45,7 @@ const AboutPage = () => {
       <section className="about-history">
         <h2>Our History</h2>
         <p>
-          Established in Sidhpur, Gokul Global University has a proud tradition of academic 
+          Established in Vadodara, IIIT Vadodara has a proud tradition of academic 
           excellence and community service. Over the years, we have evolved to meet the 
           changing needs of students and society while staying true to our core mission.
         </p>
